@@ -34,8 +34,8 @@ export function Navbar() {
           : 'bg-transparent',
       )}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
-        <a href="#inicio" className="group flex items-center gap-3">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8">
+        <a href="#inicio" className="group flex flex-none items-center gap-3">
           <span className="flex h-14 w-auto flex-none items-center lg:h-16">
             <img
               src="/images/logo.png"
@@ -53,12 +53,12 @@ export function Navbar() {
           </span>
         </a>
 
-        <ul className="hidden items-center gap-7 xl:flex">
+        <ul className="hidden items-center gap-5 2xl:flex">
           {navLinks.map((link) => (
-            <li key={link.href}>
+            <li key={link.href} className="flex-none">
               <a
                 href={link.href}
-                className="relative text-[13px] font-medium uppercase tracking-wide text-white/80 transition-colors hover:text-white after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full"
+                className="relative whitespace-nowrap text-[13px] font-medium uppercase tracking-wide text-white/80 transition-colors hover:text-white after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.label}
               </a>
@@ -66,17 +66,17 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-none items-center gap-3">
           <a
             href="#contacto"
-            className="hidden rounded-sm bg-gold px-5 py-2.5 text-[12px] font-semibold uppercase tracking-widest text-gold-foreground transition-all duration-300 hover:brightness-105 hover:shadow-lg hover:shadow-gold/20 sm:inline-block"
+            className="hidden whitespace-nowrap rounded-sm bg-gold px-5 py-2.5 text-[12px] font-semibold uppercase tracking-widest text-gold-foreground transition-all duration-300 hover:brightness-105 hover:shadow-lg hover:shadow-gold/20 sm:inline-block"
           >
             Solicitar avalúo
           </a>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-sm text-white xl:hidden"
+            className="inline-flex h-10 w-10 flex-none items-center justify-center rounded-sm text-white 2xl:hidden"
             aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={open}
           >
@@ -88,7 +88,7 @@ export function Navbar() {
       {/* Mobile menu */}
       <div
         className={cn(
-          'overflow-hidden border-t border-white/10 bg-navy transition-[max-height] duration-500 ease-in-out xl:hidden',
+          'overflow-hidden border-t border-white/10 bg-navy transition-[max-height] duration-500 ease-in-out 2xl:hidden',
           open ? 'max-h-[560px]' : 'max-h-0',
         )}
       >

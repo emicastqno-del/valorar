@@ -50,7 +50,7 @@ export const navLinks = [
   { label: 'Servicios', href: '#servicios' },
   { label: 'Propiedades', href: '#propiedades' },
   { label: 'Proceso', href: '#proceso' },
-  { label: 'Preguntas frecuentes', href: '#faq' },
+  { label: 'Preguntas', href: '#faq' },
   { label: 'Contacto', href: '#contacto' },
 ]
 

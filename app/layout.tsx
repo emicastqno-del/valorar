@@ -1,18 +1,19 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Fraunces, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
 })
 
-const playfair = Playfair_Display({
+const fraunces = Fraunces({
   subsets: ['latin'],
   variable: '--font-playfair',
   display: 'swap',
+  axes: ['opsz'],
 })
 
 const siteUrl = 'https://valorareficaz.com'
@@ -74,7 +75,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`light ${inter.variable} ${playfair.variable} bg-background`}
+      className={`light ${jakarta.variable} ${fraunces.variable} bg-background`}
     >
       <body className="font-sans antialiased">
         {children}
