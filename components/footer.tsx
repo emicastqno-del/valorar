@@ -21,11 +21,11 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3">
-              <span className="flex h-12 w-12 flex-none items-center justify-center overflow-hidden rounded-sm bg-white p-1">
+              <span className="flex h-14 w-auto flex-none items-center">
                 <img
                   src="/images/logo.png"
                   alt="Logo Valorar Eficaz"
-                  className="h-full w-full object-contain"
+                  className="h-full w-auto object-contain"
                 />
               </span>
               <div>

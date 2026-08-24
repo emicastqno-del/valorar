@@ -36,11 +36,11 @@ export function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
         <a href="#inicio" className="group flex items-center gap-3">
-          <span className="flex h-11 w-11 flex-none items-center justify-center overflow-hidden rounded-sm bg-white p-1 shadow-sm ring-1 ring-white/10 lg:h-12 lg:w-12">
+          <span className="flex h-14 w-auto flex-none items-center lg:h-16">
             <img
               src="/images/logo.png"
               alt="Logo Valorar Eficaz"
-              className="h-full w-full object-contain"
+              className="h-full w-auto object-contain"
             />
           </span>
           <span className="flex flex-col leading-none">
