@@ -3,7 +3,7 @@
 import { useState, type FormEvent } from 'react'
 import Image from 'next/image'
 import { MessageCircle, Phone, ArrowRight, Check } from 'lucide-react'
-import { whatsappHref, phoneHref } from '@/lib/company'
+import { WHATSAPP_NUMBER, whatsappHref, phoneHref } from '@/lib/company'
 
 const inmuebleTypes = [
   'Apartamento',
@@ -27,9 +27,36 @@ export function Contact() {
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    // Preparado para conectar con CRM, correo o webhook.
-    // Ejemplo: await fetch('/api/contact', { method: 'POST', body: new FormData(e.currentTarget) })
+
+    const formData = new FormData(e.currentTarget)
+    const name = formData.get('name') as string
+    const phone = formData.get('phone') as string
+    const email = formData.get('email') as string
+    const city = formData.get('city') as string
+    const type = formData.get('type') as string
+    const reason = formData.get('reason') as string
+    const message = formData.get('message') as string
+
+    const lines = [
+      'Hola, quisiera solicitar información. Estos son mis datos:',
+      '',
+      `*Nombre:* ${name}`,
+      `*Teléfono:* ${phone}`,
+      email && `*Correo:* ${email}`,
+      city && `*Ciudad:* ${city}`,
+      type && `*Tipo de inmueble:* ${type}`,
+      reason && `*Motivo:* ${reason}`,
+      message && `*Mensaje:* ${message}`,
+    ].filter(Boolean)
+
+    const whatsappMessage = lines.join('\n')
+
     setSubmitted(true)
+
+    window.open(
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`,
+      '_blank',
+    )
   }
 
   return (
@@ -103,12 +130,22 @@ export function Contact() {
                 <Check className="h-7 w-7 text-gold" strokeWidth={2} />
               </span>
               <h3 className="mt-6 font-serif text-2xl text-foreground">
-                Hemos recibido su solicitud
+                Casi listo — confirme el envío en WhatsApp
               </h3>
               <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
-                Gracias por contactar a Valorar Eficaz. Nos pondremos en comunicación con
-                usted para atender su solicitud.
+                Hemos abierto WhatsApp con sus datos ya redactados. Solo dele clic a
+                &ldquo;Enviar&rdquo; allí para que su solicitud llegue directamente a Valorar
+                Eficaz.
               </p>
+              <a
+                href={whatsappHref()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center justify-center gap-2 rounded-sm bg-gold px-6 py-3 text-[13px] font-semibold uppercase tracking-widest text-gold-foreground transition-all duration-300 hover:brightness-105"
+              >
+                <MessageCircle className="h-4 w-4" />
+                Abrir WhatsApp de nuevo
+              </a>
             </div>
           ) : (
             <form
