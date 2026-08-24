@@ -13,13 +13,13 @@ export const company = {
   registrationDate: '23 de junio de 2017',
   economicActivity:
     '6820 – Actividades inmobiliarias realizadas a cambio de una retribución o por contrata',
-  city: 'Medellín, Antioquia — Colombia',
+  city: 'Medellín, Antioquia',
   website: 'https://valorareficaz.com/',
 
   // Datos de contacto: complete con la información oficial cuando esté disponible.
-  phone: '', // ej: "+57 300 000 0000"
-  email: '', // ej: "contacto@valorareficaz.com"
-  address: '', // ej: "Medellín, Antioquia"
+  phone: '+57 317 512 2455',
+  email: 'info@valorareficazsas.com',
+  address: 'Medellín, Antioquia',
 }
 
 // Configuración de canales de contacto directo.
@@ -44,7 +44,6 @@ export function phoneHref() {
 }
 
 export const navLinks = [
-  { label: 'Inicio', href: '#inicio' },
   { label: 'Nosotros', href: '#nosotros' },
   { label: 'Avalúos', href: '#avaluos' },
   { label: 'Servicios', href: '#servicios' },

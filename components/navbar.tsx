@@ -53,12 +53,12 @@ export function Navbar() {
           </span>
         </a>
 
-        <ul className="hidden items-center gap-5 2xl:flex">
+        <ul className="hidden items-center gap-4 xl:flex">
           {navLinks.map((link) => (
             <li key={link.href} className="flex-none">
               <a
                 href={link.href}
-                className="relative whitespace-nowrap text-[13px] font-medium uppercase tracking-wide text-white/80 transition-colors hover:text-white after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full"
+                className="relative whitespace-nowrap text-[12px] font-medium uppercase tracking-wide text-white/80 transition-colors hover:text-white after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.label}
               </a>
@@ -76,7 +76,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="inline-flex h-10 w-10 flex-none items-center justify-center rounded-sm text-white 2xl:hidden"
+            className="inline-flex h-10 w-10 flex-none items-center justify-center rounded-sm text-white xl:hidden"
             aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={open}
           >
@@ -88,7 +88,7 @@ export function Navbar() {
       {/* Mobile menu */}
       <div
         className={cn(
-          'overflow-hidden border-t border-white/10 bg-navy transition-[max-height] duration-500 ease-in-out 2xl:hidden',
+          'overflow-hidden border-t border-white/10 bg-navy transition-[max-height] duration-500 ease-in-out xl:hidden',
           open ? 'max-h-[560px]' : 'max-h-0',
         )}
       >
