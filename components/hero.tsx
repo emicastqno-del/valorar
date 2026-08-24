@@ -13,8 +13,10 @@ export function Hero() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/85 via-navy/70 to-navy/90" />
-        <div className="absolute inset-0 bg-navy/25" />
+        {/* Degradado lateral: oscuro donde va el texto (izquierda), deja ver la foto a la derecha */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/55 to-navy/10" />
+        {/* Degradado inferior sutil para anclar el contenido y dar profundidad */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10" />
       </div>
 
       <div className="relative mx-auto w-full max-w-7xl px-5 pt-28 pb-20 lg:px-8">
