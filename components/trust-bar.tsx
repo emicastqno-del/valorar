@@ -1,4 +1,4 @@
-import { LineChart, FileText, ShieldCheck, BadgeCheck, Building2 } from 'lucide-react'
+import { LineChart, FileText, ShieldCheck, Award, Landmark } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
 import { certifications, clientExperience } from '@/lib/company'
 
@@ -20,7 +20,7 @@ const items = [
   },
 ]
 
-const certIcons = [BadgeCheck, Building2]
+const certIcons = [Award, Landmark]
 
 export function TrustBar() {
   return (
@@ -54,45 +54,62 @@ export function TrustBar() {
             </Reveal>
           ))}
         </div>
+      </div>
 
-        {/* Certificaciones y afiliaciones oficiales */}
-        <Reveal delay={160} className="mt-8 rounded-sm border border-gold/25 bg-secondary p-8 lg:p-10">
-          <p className="mb-6 flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.28em] text-gold">
-            <span className="h-px w-10 bg-gold" />
+      {/* Certificaciones — estilo sello oficial */}
+      <Reveal delay={160} className="relative mt-20 overflow-hidden bg-navy py-16 lg:py-20">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-[0.06]"
+          style={{
+            backgroundImage:
+              'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
+            backgroundSize: '28px 28px',
+          }}
+        />
+        <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
+          <p className="text-center text-[12px] font-semibold uppercase tracking-[0.32em] text-gold">
             Respaldo y certificaciones
           </p>
-          <div className="grid gap-8 sm:grid-cols-2">
+          <div className="mx-auto mt-10 grid max-w-4xl gap-8 sm:grid-cols-2">
             {certifications.map((cert, i) => {
-              const Icon = certIcons[i] ?? BadgeCheck
+              const Icon = certIcons[i] ?? Award
               return (
-                <div key={cert.title} className="flex items-start gap-4">
-                  <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-gold/15">
-                    <Icon className="h-5 w-5 text-gold" strokeWidth={1.75} />
+                <div
+                  key={cert.title}
+                  className="flex flex-col items-center rounded-sm border border-white/10 bg-white/[0.03] px-7 py-10 text-center backdrop-blur-sm transition-colors duration-300 hover:border-gold/40"
+                >
+                  <span className="relative flex h-20 w-20 flex-none items-center justify-center">
+                    <span className="absolute inset-0 rounded-full border border-gold/50" />
+                    <span className="absolute inset-[6px] rounded-full border border-gold/25" />
+                    <Icon className="h-8 w-8 text-gold" strokeWidth={1.5} />
                   </span>
-                  <div>
-                    <h3 className="font-serif text-lg text-foreground">{cert.title}</h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-                      {cert.text}
-                    </p>
-                  </div>
+                  <h3 className="mt-6 font-serif text-lg text-white">{cert.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-white/60">
+                    {cert.text}
+                  </p>
                 </div>
               )
             })}
           </div>
-        </Reveal>
+        </div>
+      </Reveal>
 
-        {/* Experiencia con empresas */}
-        <Reveal delay={220} className="mt-10 text-center">
+      {/* Experiencia con empresas */}
+      <div className="border-t border-border bg-secondary py-14">
+        <Reveal className="mx-auto max-w-7xl px-5 text-center lg:px-8">
           <p className="text-[12px] font-semibold uppercase tracking-[0.28em] text-muted-foreground">
             Experiencia realizando avalúos para
           </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
-            {clientExperience.map((name) => (
-              <span
-                key={name}
-                className="font-serif text-base text-foreground/70 lg:text-lg"
-              >
-                {name}
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-x-3 gap-y-4">
+            {clientExperience.map((name, i) => (
+              <span key={name} className="flex items-center gap-3">
+                <span className="whitespace-nowrap font-serif text-base text-foreground/80 lg:text-lg">
+                  {name}
+                </span>
+                {i < clientExperience.length - 1 && (
+                  <span className="h-1 w-1 rounded-full bg-gold/60" />
+                )}
               </span>
             ))}
           </div>
