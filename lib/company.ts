@@ -74,6 +74,47 @@ export const services = [
   },
 ]
 
+// Tipos de avalúos que realiza Valorar Eficaz a nivel nacional.
+export const appraisalTypes = [
+  'Avalúos de inmuebles urbanos',
+  'Avalúos de inmuebles rurales',
+  'Avalúos de maquinaria fija, equipos y maquinaria móvil',
+  'Avalúos de maquinaria y equipos especiales (naves, aeronaves, trenes, locomotoras)',
+  'Avalúos de activos operacionales y establecimientos de comercio',
+  'Avalúos de intangibles (marcas, patentes, derechos de autor, fondo de comercio, títulos mineros)',
+  'Avalúos especiales (hoteles, colegios, hospitales, clínicas, avance de obra)',
+  'Avalúos de intangibles especiales (daño emergente, lucro cesante, daño moral, servidumbres, litigios)',
+]
+
+// Certificaciones y afiliaciones oficiales.
+export const certifications = [
+  {
+    title: 'Registro Abierto de Avaluadores (R.A.A.)',
+    text: 'Nuestros avaluadores cuentan con el Registro Abierto de Avaluadores, que certifica su calidad y profesionalismo.',
+  },
+  {
+    title: 'Lonja de Propiedad Raíz de Medellín y Antioquia',
+    text: 'Somos afiliados a la Lonja de Propiedad Raíz de Medellín y Antioquia.',
+  },
+]
+
+// Empresas con las que se tiene experiencia en la realización de avalúos.
+export const clientExperience = [
+  'Coltefinanciera S.A.',
+  'Distrileche S.A.',
+  'Montoya López Asociados',
+  'Antioquia GOLD',
+  'Pronto Good and Services',
+]
+
+// Documentos necesarios para realizar los avalúos.
+export const requiredDocuments = [
+  'Certificado de libertad vigente de cada inmueble en proceso de avalúo (no mayor a 30 días)',
+  'Copia de escritura pública de los inmuebles objeto de avalúo',
+  'Norma de uso de suelos de los lotes (cuando se trate de avaluar lotes en zona urbana o rural)',
+  'Visita al predio o predios objeto de avalúo',
+]
+
 export const useCases = [
   {
     title: 'Compra',
@@ -174,7 +215,11 @@ export const faqs = [
   },
   {
     q: '¿Qué tipo de inmuebles pueden valorar?',
-    a: 'Consulte con nuestro equipo las características del inmueble que desea valorar y las condiciones del servicio.',
+    a: 'Realizamos avalúos de inmuebles urbanos y rurales, maquinaria fija y móvil, activos operacionales, establecimientos de comercio, intangibles (marcas, patentes, fondo de comercio) y avalúos especiales como hoteles, colegios, hospitales y clínicas.',
+  },
+  {
+    q: '¿Qué documentos necesito para solicitar un avalúo?',
+    a: 'En general se requiere el certificado de libertad vigente del inmueble (no mayor a 30 días), copia de la escritura pública, la norma de uso de suelos del lote (cuando aplique) y realizar la visita al predio.',
   },
   {
     q: '¿Cómo puedo solicitar un avalúo?',
@@ -182,6 +227,6 @@ export const faqs = [
   },
   {
     q: '¿Dónde presta servicios Valorar Eficaz?',
-    a: 'Valorar Eficaz desarrolla actividades dentro del sector inmobiliario colombiano. Consulte con el equipo la cobertura disponible para su solicitud específica.',
+    a: 'Estamos en la capacidad de realizar encargos valuatorios a nivel nacional. Consulte con el equipo la cobertura disponible para su solicitud específica.',
   },
 ]

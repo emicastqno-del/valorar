@@ -1,13 +1,7 @@
 import Image from 'next/image'
 import { ArrowRight, Check } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
-
-const points = [
-  'Análisis del inmueble',
-  'Información orientada a la valoración',
-  'Atención personalizada',
-  'Información clara',
-]
+import { appraisalTypes } from '@/lib/company'
 
 export function AppraisalSection() {
   return (
@@ -30,18 +24,22 @@ export function AppraisalSection() {
               relacionados con un inmueble.
             </p>
             <p>
-              Solicite información sobre el proceso de valoración y conozca cómo podemos
-              ayudarle.
+              Estamos en la capacidad de realizar encargos valuatorios{' '}
+              <strong className="font-semibold text-foreground">
+                a nivel nacional
+              </strong>
+              . Solicite información sobre el proceso de valoración y conozca cómo
+              podemos ayudarle.
             </p>
           </div>
 
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-            {points.map((point) => (
-              <li key={point} className="flex items-center gap-3">
-                <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-gold/15">
+            {appraisalTypes.map((point) => (
+              <li key={point} className="flex items-start gap-3">
+                <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-gold/15">
                   <Check className="h-3.5 w-3.5 text-gold" strokeWidth={2.5} />
                 </span>
-                <span className="text-sm text-foreground">{point}</span>
+                <span className="text-sm leading-snug text-foreground">{point}</span>
               </li>
             ))}
           </ul>
