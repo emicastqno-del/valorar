@@ -1,5 +1,6 @@
 import { Navbar } from '@/components/navbar'
 import { Hero } from '@/components/hero'
+import { Stats } from '@/components/stats'
 import { TrustBar } from '@/components/trust-bar'
 import { About } from '@/components/about'
 import { Leadership } from '@/components/leadership'
@@ -53,6 +54,7 @@ export default function Page() {
       <Navbar />
       <main>
         <Hero />
+        <Stats />
         <TrustBar />
         <About />
         <Leadership />

@@ -19,7 +19,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10" />
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-5 pt-28 pb-20 lg:px-8">
+      <div className="relative mx-auto w-full max-w-7xl px-5 pt-28 pb-28 lg:px-8 lg:pb-32">
         <div className="max-w-3xl">
           <p className="mb-6 flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.32em] text-gold">
             <span className="h-px w-10 bg-gold" />
