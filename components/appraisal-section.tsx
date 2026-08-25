@@ -1,21 +1,13 @@
 import Image from 'next/image'
-import {
-  ArrowRight,
-  Building2,
-  Trees,
-  Cog,
-  Plane,
-  Briefcase,
-  Copyright,
-  Landmark,
-  Scale,
-} from 'lucide-react'
+import { ArrowRight, Cog, Plane, Briefcase, Copyright, Landmark, Scale } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
 import { appraisalTypes } from '@/lib/company'
 
-const typeIcons = [Building2, Trees, Cog, Plane, Briefcase, Copyright, Landmark, Scale]
+const specializedIcons = [Cog, Plane, Briefcase, Copyright, Landmark, Scale]
 
 export function AppraisalSection() {
+  const [urban, rural, ...specialized] = appraisalTypes
+
   return (
     <section id="avaluos" className="bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
@@ -69,29 +61,74 @@ export function AppraisalSection() {
         </div>
 
         {/* Tipos de avalúos */}
-        <Reveal delay={80} className="mt-20 lg:mt-24">
-          <p className="text-center text-[12px] font-semibold uppercase tracking-[0.28em] text-gold">
-            Todo tipo de avalúos, a nivel nacional
-          </p>
-          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            {appraisalTypes.map((point, i) => {
-              const Icon = typeIcons[i % typeIcons.length]
+        <div className="mt-20 lg:mt-28">
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <p className="text-[12px] font-semibold uppercase tracking-[0.32em] text-gold">
+              Qué avaluamos
+            </p>
+            <h3 className="mt-4 font-serif text-2xl font-medium text-balance text-foreground lg:text-3xl">
+              Todo tipo de avalúos, a nivel nacional
+            </h3>
+          </Reveal>
+
+          {/* Categorías principales — foto grande */}
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+            {[
+              { ...urban, image: '/images/about.png' },
+              { ...rural, image: '/images/prop-laceja.png' },
+            ].map((cat) => (
+              <Reveal
+                key={cat.title}
+                className="group relative aspect-[4/3] overflow-hidden rounded-sm"
+              >
+                <Image
+                  src={cat.image}
+                  alt={cat.title}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-7 lg:p-8">
+                  <h4 className="font-serif text-2xl text-white lg:text-3xl">
+                    {cat.title}
+                  </h4>
+                  <p className="mt-2 max-w-sm text-sm leading-relaxed text-white/75">
+                    {cat.detail}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          {/* Avalúos especializados — lista editorial */}
+          <Reveal delay={100} className="mt-6 divide-y divide-border rounded-sm border border-border">
+            {specialized.map((item, i) => {
+              const Icon = specializedIcons[i % specializedIcons.length]
               return (
                 <div
-                  key={point}
-                  className="group flex flex-col items-start gap-4 rounded-sm border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-lg hover:shadow-navy/5"
+                  key={item.title}
+                  className="group flex flex-col gap-4 p-6 transition-colors duration-300 hover:bg-secondary sm:flex-row sm:items-center sm:gap-6 lg:p-7"
                 >
-                  <span className="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-navy text-navy-foreground transition-colors duration-300 group-hover:bg-gold group-hover:text-gold-foreground">
+                  <span className="font-serif text-2xl text-gold/50 sm:w-10 sm:flex-none">
+                    {String(i + 3).padStart(2, '0')}
+                  </span>
+                  <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-navy text-navy-foreground transition-colors duration-300 group-hover:bg-gold group-hover:text-gold-foreground">
                     <Icon className="h-5 w-5" strokeWidth={1.75} />
                   </span>
-                  <span className="text-sm font-medium leading-snug text-foreground">
-                    {point}
-                  </span>
+                  <div className="flex-1">
+                    <h4 className="text-base font-semibold text-foreground">
+                      {item.title}
+                    </h4>
+                    <p className="mt-0.5 text-sm leading-relaxed text-muted-foreground">
+                      {item.detail}
+                    </p>
+                  </div>
                 </div>
               )
             })}
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
       </div>
     </section>
   )

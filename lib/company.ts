@@ -76,14 +76,38 @@ export const services = [
 
 // Tipos de avalúos que realiza Valorar Eficaz a nivel nacional.
 export const appraisalTypes = [
-  'Avalúos de inmuebles urbanos',
-  'Avalúos de inmuebles rurales',
-  'Avalúos de maquinaria fija, equipos y maquinaria móvil',
-  'Avalúos de maquinaria y equipos especiales (naves, aeronaves, trenes, locomotoras)',
-  'Avalúos de activos operacionales y establecimientos de comercio',
-  'Avalúos de intangibles (marcas, patentes, derechos de autor, fondo de comercio, títulos mineros)',
-  'Avalúos especiales (hoteles, colegios, hospitales, clínicas, avance de obra)',
-  'Avalúos de intangibles especiales (daño emergente, lucro cesante, daño moral, servidumbres, litigios)',
+  {
+    title: 'Inmuebles urbanos',
+    detail: 'Casas, apartamentos, locales y lotes urbanos.',
+  },
+  {
+    title: 'Inmuebles rurales',
+    detail: 'Fincas, lotes rurales y predios agrícolas.',
+  },
+  {
+    title: 'Maquinaria y equipos',
+    detail: 'Maquinaria fija, equipos y maquinaria móvil.',
+  },
+  {
+    title: 'Equipos especiales',
+    detail: 'Naves, aeronaves, trenes y locomotoras.',
+  },
+  {
+    title: 'Activos y comercio',
+    detail: 'Activos operacionales y establecimientos de comercio.',
+  },
+  {
+    title: 'Intangibles',
+    detail: 'Marcas, patentes, derechos de autor, fondo de comercio, títulos mineros.',
+  },
+  {
+    title: 'Avalúos especiales',
+    detail: 'Hoteles, colegios, hospitales, clínicas y avance de obra.',
+  },
+  {
+    title: 'Intangibles especiales',
+    detail: 'Daño emergente, lucro cesante, daño moral, servidumbres y litigios.',
+  },
 ]
 
 // Certificaciones y afiliaciones oficiales.
