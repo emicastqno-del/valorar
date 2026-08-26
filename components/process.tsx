@@ -21,7 +21,7 @@ export function Process() {
             <Reveal
               key={step.step}
               delay={i * 100}
-              className="group flex flex-col bg-background p-8 transition-colors duration-300 hover:bg-secondary"
+              className="interactive-lift shine-card group flex flex-col bg-background p-8 hover:bg-secondary"
             >
               <span className="font-serif text-5xl text-gold/40 transition-colors duration-300 group-hover:text-gold">
                 {step.step}

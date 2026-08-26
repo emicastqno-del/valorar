@@ -25,7 +25,7 @@ export function Services() {
             <Reveal
               key={service.title}
               delay={i * 100}
-              className="group flex flex-col overflow-hidden rounded-sm border border-border bg-background transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-navy/5"
+              className="shine-card interactive-lift group flex flex-col overflow-hidden rounded-sm border border-border bg-background hover:-translate-y-1.5 hover:shadow-xl hover:shadow-navy/5"
             >
               <div className="relative aspect-[3/2] overflow-hidden">
                 <Image

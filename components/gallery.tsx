@@ -38,7 +38,7 @@ export function Gallery() {
 
           {/* Right column: editorial image composition */}
           <div className="grid grid-cols-2 gap-4 lg:col-span-8 lg:gap-5">
-            <Reveal className="relative col-span-2 aspect-[16/9] overflow-hidden rounded-sm">
+            <Reveal className="image-reveal relative col-span-2 aspect-[16/9] overflow-hidden rounded-sm">
               <Image
                 src="/images/gallery-2.png"
                 alt="Panorámica de Medellín entre montañas al atardecer"
@@ -47,7 +47,7 @@ export function Gallery() {
                 className="object-cover transition-transform duration-700 hover:scale-105"
               />
             </Reveal>
-            <Reveal delay={120} className="relative aspect-[4/5] overflow-hidden rounded-sm">
+            <Reveal delay={120} className="image-reveal relative aspect-[4/5] overflow-hidden rounded-sm">
               <Image
                 src="/images/gallery-1.png"
                 alt="Detalle de escalera y madera en interior moderno"
@@ -56,7 +56,7 @@ export function Gallery() {
                 className="object-cover transition-transform duration-700 hover:scale-105"
               />
             </Reveal>
-            <Reveal delay={220} className="relative aspect-[4/5] overflow-hidden rounded-sm">
+            <Reveal delay={220} className="image-reveal relative aspect-[4/5] overflow-hidden rounded-sm">
               <Image
                 src="/images/gallery-3.png"
                 alt="Cocina moderna con isla de mármol e iluminación cálida"

@@ -43,8 +43,8 @@ function useCountUp(target: number, start: boolean, duration = 1600) {
 function StatItem({ stat, start }: { stat: Stat; start: boolean }) {
   const value = useCountUp(stat.value, start)
   return (
-    <div className="flex flex-1 items-center gap-4 px-6 py-7 lg:flex-col lg:items-center lg:gap-3 lg:px-4 lg:text-center">
-      <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-gold/15 lg:h-12 lg:w-12">
+    <div className="interactive-lift group flex flex-1 items-center gap-4 rounded-sm px-6 py-7 lg:flex-col lg:items-center lg:gap-3 lg:px-4 lg:text-center">
+      <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-gold/15 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110 lg:h-12 lg:w-12">
         <stat.icon className="h-5 w-5 text-gold" strokeWidth={1.75} />
       </span>
       <div className="lg:mt-1">

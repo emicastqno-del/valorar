@@ -16,6 +16,7 @@ import { Contact } from '@/components/contact'
 import { FinalCta } from '@/components/final-cta'
 import { Footer } from '@/components/footer'
 import { WhatsAppButton } from '@/components/whatsapp-button'
+import { PageEffects } from '@/components/page-effects'
 import { company, faqs } from '@/lib/company'
 
 const jsonLd = {
@@ -51,6 +52,7 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <PageEffects />
       <Navbar />
       <main>
         <Hero />

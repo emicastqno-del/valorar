@@ -35,7 +35,7 @@ export function Navbar() {
       )}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8">
-        <a href="#inicio" className="group flex flex-none items-center gap-3">
+        <a href="#inicio" className="group flex flex-none items-center gap-3 transition-transform duration-300 hover:-translate-y-0.5">
           <span className="flex h-14 w-auto flex-none items-center lg:h-16">
             <img
               src="/images/logo.png"
