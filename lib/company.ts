@@ -30,6 +30,10 @@ export const PHONE_NUMBER: string = '+573175122455' // ej: "+573000000000"
 export const WHATSAPP_MESSAGE =
   'Hola, me gustaría solicitar información sobre un avalúo con Valorar Eficaz.'
 
+// Página pública de la inmobiliaria en Wasi (portafolio completo de inmuebles).
+// Si queda vacío, la tarjeta "Conozca más inmuebles" abre WhatsApp.
+export const WASI_SITE_URL: string = ''
+
 export const WHATSAPP_MESSAGE_NATALIA =
   'Hola Natalia, me gustaría recibir acompañamiento para una decisión inmobiliaria. ¿Podríamos conversar?'
 
@@ -129,6 +133,9 @@ export const clientExperience = [
   'Montoya López Asociados',
   'Antioquia GOLD',
   'Pronto Good and Services',
+  'Cooperativa Cotrafa',
+  'Cosas de Valor',
+  'Constructora Contex',
 ]
 
 // Documentos necesarios para realizar los avalúos.

@@ -1,20 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Fraunces, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
-
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
-
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  display: 'swap',
-  axes: ['opsz'],
-})
 
 const siteUrl = 'https://valorareficaz.com'
 
@@ -75,7 +61,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`light ${jakarta.variable} ${fraunces.variable} bg-background`}
+      className="light bg-background"
     >
       <body className="font-sans antialiased">
         {children}

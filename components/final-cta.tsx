@@ -10,7 +10,7 @@ export function FinalCta() {
             Valorar Eficaz
           </p>
           <h2 className="font-serif text-4xl font-medium leading-[1.1] text-balance text-white lg:text-5xl xl:text-6xl">
-            Su inmueble tiene un valor. Conozcámoslo.
+            Saber lo que vale su inmueble es el primer paso. Conozcámoslo hoy.
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-pretty text-lg text-white/70">
             Solicite información y dé el primer paso para conocer mejor su propiedad.

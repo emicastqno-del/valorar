@@ -68,10 +68,15 @@ export function TrustBar() {
           }}
         />
         <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
-          <p className="text-center text-[12px] font-semibold uppercase tracking-[0.32em] text-gold">
-            Respaldo y certificaciones
-          </p>
-          <div className="mx-auto mt-10 grid max-w-4xl gap-8 sm:grid-cols-2">
+          <div className="flex flex-col items-center text-center">
+            <span className="mb-5 h-px w-16 bg-gold" />
+            <h2 className="font-serif text-4xl font-bold leading-tight text-balance text-white lg:text-6xl">
+              Respaldo y{' '}
+              <span className="text-gold">certificaciones</span>
+            </h2>
+            <span className="mt-6 h-1 w-24 rounded-full bg-gold" />
+          </div>
+          <div className="mx-auto mt-14 grid max-w-4xl gap-8 sm:grid-cols-2">
             {certifications.map((cert, i) => {
               const Icon = certIcons[i] ?? Award
               return (
